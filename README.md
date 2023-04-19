@@ -1,4 +1,4 @@
-# flutter_bitrise_integration_test_automation
+# Flutter Bitrise Integration Test Example
 
 Sample flutter app with bitrise integration test automation
 
