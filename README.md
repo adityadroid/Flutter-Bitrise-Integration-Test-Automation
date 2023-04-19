@@ -1,16 +1,32 @@
-# Flutter Bitrise Integration Test Example
 
-Sample flutter app with bitrise integration test automation
+# Flutter Integration Test Automation using Bitrise
+A sample app showing how to automate integration tests using Bitrise
 
-## Getting Started
+Happy learning. :+1:
 
-This project is a starting point for a Flutter application.
+### Show some :heart: and star the repo to support the project
 
-A few resources to get you started if this is your first Flutter project:
+[![GitHub stars](https://img.shields.io/github/stars/adityadroid/Flutter-Bitrise-Integration-Test-Automation.svg?style=social&label=Star)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation) [![GitHub forks](https://img.shields.io/github/forks/adityadroid/Flutter-Bitrise-Integration-Test-Automation.svg?style=social&label=Fork)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation/fork) [![GitHub watchers](https://img.shields.io/github/watchers/adityadroid/Flutter-Bitrise-Integration-Test-Automation.svg?style=social&label=Watch)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation) [![GitHub followers](https://img.shields.io/github/followers/adityadroid.svg?style=social&label=Follow)](https://github.com/adityadroid)
+[![Twitter Follow](https://img.shields.io/twitter/follow/adityadroid.svg?style=social)](https://twitter.com/adityadroid)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### :heart: Found this project useful?
+
+If you found this project useful, then please consider giving it a :star: on Github and sharing it with your friends via social media.
+
+## Project Created & Maintained By
+
+### Aditya Gurjar
+
+
+<a href="https://play.google.com/store/apps/developer?id=Aditya+Gurjar"><img src="https://github.com/aritraroy/social-icons/blob/master/play-store-icon.png?raw=true" width="60"></a> <a href="https://medium.com/@adityadroid"><img src="https://github.com/aritraroy/social-icons/blob/master/medium-icon.png?raw=true" width="60"></a>
+<a href="https://twitter.com/adityadroid"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
+<a href="https://linkedin.com/in/adityagurjar"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a>
+<a href="https://instagram.com/adityadroid"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
+
+# Donate
+
+> If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of :coffee:
+>
+> - [PayPal](https://www.paypal.me/adityadroid/)

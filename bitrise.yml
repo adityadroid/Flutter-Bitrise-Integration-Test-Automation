@@ -1,0 +1,45 @@
+---
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: flutter
+workflows:
+  integration-test-app:
+    description: 'This workflow runs the projects integration tests located at integration_test/
+      directory
+
+      '
+    steps:
+      - activate-ssh-key@4: {}
+      - git-clone@8: {}
+      - flutter-installer@0:
+          inputs:
+            - version: 3.3.10
+            - is_update: 'false'
+      - script@1:
+          title: Activate JUnit for Reporting back test results to bitrise
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                # fail if any commands fails
+                set -e
+                # make pipelines' return status equal the last command to exit with a non-zero status, or zero if all commands exit successfully
+                set -o pipefail
+                # debug log
+                set -x
+                flutter pub global activate junitreport
+      - xcode-start-simulator@0.2:
+          inputs:
+            - destination: platform=iOS Simulator,name=iPhone 14,OS=latest
+      - flutter-test@1:
+          inputs:
+            - tests_path_pattern: integration_test
+            - additional_params: ''
+      - deploy-to-bitrise-io@2: {}
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.2.x-ventura
+app:
+  envs:
+    - opts:
+        is_expand: false
+      BITRISE_FLUTTER_PROJECT_LOCATION: "."
