@@ -1,0 +1,88 @@
+---
+format_version: '11'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: flutter
+workflows:
+  integration-test-app:
+    description: 'This workflow runs the projects integration tests located at integration_test/
+      directory
+
+      '
+    steps:
+      - activate-ssh-key@4: {}
+      - git-clone@8: {}
+      - flutter-installer@0:
+          inputs:
+            - version: 3.3.10
+            - is_update: 'false'
+      - script@1:
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                # fail if any commands fails
+                set -e
+                # make pipelines' return status equal the last command to exit with a non-zero status, or zero if all commands exit successfully
+                set -o pipefail
+                # debug log
+                set -x
+                flutter pub global activate junitreport
+          title: Activate JUnit for Reporting back test results to bitrise
+      - xcode-start-simulator@0.2:
+          inputs:
+            - destination: platform=iOS Simulator,name=iPhone 14,OS=latest
+      - flutter-test@1:
+          inputs:
+            - tests_path_pattern: integration_test
+            - additional_params: ''
+      - deploy-to-bitrise-io@2: {}
+  firebase-test-lab-run:
+    steps:
+      - activate-ssh-key@4: {}
+      - git-clone@8: {}
+      - flutter-installer@0:
+          inputs:
+            - version: 3.3.10
+            - is_update: 'false'
+      - flutter-build@0.15.1:
+          inputs:
+            - android_additional_params: "--debug -t lib/main.dart"
+            - android_output_type: apk
+            - platform: android
+      - script@1.2.0:
+          title: Firebase Test Lab
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                # fail if any commands fails
+                set -e
+                # debug log
+                set -x
+                #1. Install gcloud CLI
+                curl https://sdk.cloud.google.com | bash
+                source $HOME/google-cloud-sdk/path.bash.inc
+                gcloud version
+                #2. Prepare The service account json for auth
+                echo $FIREBASE_TEST_LAB_SERVICE_ACCOUNT > ./gcloud_key_file.json
+                #3. Authenticate gcloud CLI with firebase and select the firebase project
+                gcloud auth activate-service-account --key-file=gcloud_key_file.json
+                gcloud --quiet config set project $FIREBASE_PROJECT_ID
+                #4. Build the Instrumentation Test
+                pushd android
+                ./gradlew app:assembleAndroidTest
+                ./gradlew app:assembleDebug -Ptarget="integration_test/main_integration_test.dart"
+                popd
+                #5. Run it on Test Lab using gcloud CLI.
+                gcloud firebase test android run \
+                  --type instrumentation \
+                  --app "$BITRISE_SOURCE_DIR/build/app/outputs/apk/debug/app-debug.apk" \
+                  --test "$BITRISE_SOURCE_DIR/build/app/outputs/apk/androidTest/debug/app-debug-androidTest.apk" \
+                  --timeout 30m
+      - deploy-to-bitrise-io@2: {}
+meta:
+  bitrise.io:
+    stack: osx-xcode-14.2.x-ventura
+app:
+  envs:
+    - opts:
+        is_expand: false
+      BITRISE_FLUTTER_PROJECT_LOCATION: "."
