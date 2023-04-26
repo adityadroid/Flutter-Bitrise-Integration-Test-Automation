@@ -1,6 +1,14 @@
 
 # Flutter Integration Test Automation using Bitrise
-A sample app showing how to automate integration tests using Bitrise
+A sample app showing how to automate Flutter Integration Tests using Bitrise
+
+Part of Medium Series [Flutter Integration Test Scheduling](https://medium.com/@adityadroid/flutter-integration-testing-making-bitrise-work-for-you-82159070c899) written by [Aditya Gurjar](https://medium.com/@adityadroid)
+
+### Posts In This Series
+
+[Flutter Integration Testing: Making Bitrise Work for You!](https://medium.com/@adityadroid/flutter-integration-testing-making-bitrise-work-for-you-82159070c899)
+
+[Flutter Integration Testing: Scheduled Tests on Firebase Test Lab using Bitrise](https://medium.com/@adityadroid/flutter-integration-testing-scheduled-tests-on-firebase-test-lab-using-bitrise-1843c6ecd25d)
 
 Happy learning. :+1:
 
