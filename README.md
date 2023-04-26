@@ -6,9 +6,9 @@ Part of Medium Series [Flutter Integration Test Scheduling](https://medium.com/@
 
 ### Posts In This Series
 
-[Flutter Integration Testing: Making Bitrise Work for You!](https://medium.com/@adityadroid/flutter-integration-testing-making-bitrise-work-for-you-82159070c899) - [(workflow)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation/blob/main/bitrise_test_scheduling.yml)
+[Flutter Integration Testing: Making Bitrise Work for You!](https://medium.com/@adityadroid/flutter-integration-testing-making-bitrise-work-for-you-82159070c899) - Workflow for this post: [(bitrise_test_scheduling.yml)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation/blob/main/bitrise_test_scheduling.yml)
 
-[Flutter Integration Testing: Scheduled Tests on Firebase Test Lab using Bitrise](https://medium.com/@adityadroid/flutter-integration-testing-scheduled-tests-on-firebase-test-lab-using-bitrise-1843c6ecd25d) - [(workflow)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation/blob/main/bitrise_with_test_lab.yml)
+[Flutter Integration Testing: Scheduled Tests on Firebase Test Lab using Bitrise](https://medium.com/@adityadroid/flutter-integration-testing-scheduled-tests-on-firebase-test-lab-using-bitrise-1843c6ecd25d) - Workflow for this post: [(bitrise_with_test_lab.yml)](https://github.com/adityadroid/Flutter-Bitrise-Integration-Test-Automation/blob/main/bitrise_with_test_lab.yml)
 
 Happy learning. :+1:
 
